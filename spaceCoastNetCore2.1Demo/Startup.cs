@@ -45,7 +45,8 @@ namespace spaceCoastNetCore2._1Demo
             services.AddMemoryCache();
             services.AddTransient<IDataAccess, SQLiteDataAccess>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc();
+            services.AddControllers(options => options.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
